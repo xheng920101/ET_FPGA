@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="FPGA_DEMO">
+		<CBX_INST_ENTRY INSTANCE_NAME="|fpga_demo|clkrst:u_clkrst|pll:u_pll|altpll:altpll_component" CBX_FILE_NAME="pll_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|fpga_demo|pic_gen:u_pic_gen|dcfifow96:u_dcfifow96|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_saq1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|fpga_demo|pic_gen:u_pic_gen|scfifow48_pic:u_scfifow48_pic|scfifo:scfifo_component" CBX_FILE_NAME="scfifo_0vd1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|fpga_demo|pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl|lpm_mult:Mult0" CBX_FILE_NAME="mult_gbt.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|altsyncram:WideOr59_rtl_0" CBX_FILE_NAME="altsyncram_i001.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

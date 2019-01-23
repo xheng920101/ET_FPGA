@@ -166,6 +166,7 @@ parameter       ADDR_PIC_BST_NUM_2  = 8'h23                     ;  //SDRAM burst
 parameter       ADDR_PIC_SIZE_RSV   = 8'h24                     ;  //SDRAM size reserved for 1 picture (for 1 SDRAM)
 parameter       ADDR_PIC_LAST_BST_NUM_1   = 8'h25               ;
 parameter       ADDR_PIC_LAST_BST_NUM_2   = 8'h26               ;
+parameter			ADDR_TEST			= 8'h28							 ;	//LHB
 
 //display control
 parameter       ADDR_DIS_MODE       = 8'h30                     ;
@@ -282,7 +283,6 @@ wire    [7:0]                   rx_data                         ;
 reg                             cnt_rx                          ;  //counter for bytes received from arm
 reg     [7:0]                   rx_data_lat                     ;  //odd byte received from arm, treated as address
 reg     [7:0]                   tx_data                         ;  
-
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // continuous assignment
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -418,6 +418,8 @@ begin
 		  ini_data		<= 8'd0;
 		  next_step		<= 1'b0;
 		  read_finish	<= 1'b0;
+		  
+		  
     end
     else
     begin
@@ -897,6 +899,11 @@ begin
 						  ADDR_INFO_Y_2:
 						  begin
 								info_y_axis[7:0] <= rx_data;
+						  end
+						  ADDR_TEST:
+						  begin
+								info0		<=	rx_data;
+								tx_data	<=	rx_data;
 						  end
 						  default:
 						  begin

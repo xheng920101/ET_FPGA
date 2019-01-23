@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_DEMO
-Mon Jan 07 11:50:18 2019
+Wed Jan 23 14:25:58 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -83,15 +83,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 07 11:50:17 2019           ;
+; Analysis & Synthesis Status        ; Successful - Wed Jan 23 14:25:58 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; FPGA_DEMO                                       ;
 ; Top-level Entity Name              ; fpga_demo                                       ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 8,581                                           ;
-;     Total combinational functions  ; 7,480                                           ;
-;     Dedicated logic registers      ; 3,370                                           ;
-; Total registers                    ; 3370                                            ;
+; Total logic elements               ; 8,591                                           ;
+;     Total combinational functions  ; 7,490                                           ;
+;     Dedicated logic registers      ; 3,371                                           ;
+; Total registers                    ; 3371                                            ;
 ; Total pins                         ; 157                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 93,696                                          ;
@@ -198,83 +198,83 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
-+-----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path  ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                            ; Library ;
-+-----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
-; rtl/fpga_demo.v                   ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/fpga_demo.v                   ;         ;
-; rtl/clkrst/clkrst.v               ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/clkrst/clkrst.v               ;         ;
-; rtl/rgb_intf/rgb_intf.v           ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/rgb_intf/rgb_intf.v           ;         ;
-; rtl/host_reg/host_reg.v           ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/host_reg/host_reg.v           ;         ;
-; rtl/host_reg/spi_intf.v           ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/host_reg/spi_intf.v           ;         ;
-; rtl/info_gen/info_gen.v           ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/info_gen/info_gen.v           ;         ;
-; rtl/pat_gen/pat_gen.v             ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/pat_gen/pat_gen.v             ;         ;
-; rtl/pic_gen/pic_gen.v             ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/pic_gen/pic_gen.v             ;         ;
-; rtl/pic_gen/pic_get.v             ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/pic_gen/pic_get.v             ;         ;
-; rtl/pic_gen/srm_intf.v            ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/pic_gen/srm_intf.v            ;         ;
-; rtl/pic_gen/srm_ctrl.v            ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/pic_gen/srm_ctrl.v            ;         ;
-; rtl/pic_gen/wtr.v                 ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/pic_gen/wtr.v                 ;         ;
-; rtl/pic_gen/rtr.v                 ; yes             ; User Verilog HDL File        ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/pic_gen/rtr.v                 ;         ;
-; rtl/megafunc/pll.v                ; yes             ; User Wizard-Generated File   ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/megafunc/pll.v                ;         ;
-; rtl/megafunc/fifo/dcfifow96.v     ; yes             ; User Wizard-Generated File   ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/megafunc/fifo/dcfifow96.v     ;         ;
-; rtl/megafunc/fifo/scfifow48_pic.v ; yes             ; User Wizard-Generated File   ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/megafunc/fifo/scfifow48_pic.v ;         ;
-; altpll.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                                                            ;         ;
-; aglobal130.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                                        ;         ;
-; stratix_pll.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                                                       ;         ;
-; stratixii_pll.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc                                                     ;         ;
-; cycloneii_pll.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                                                     ;         ;
-; db/pll_altpll.v                   ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/pll_altpll.v                   ;         ;
-; scfifo.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/scfifo.tdf                                                            ;         ;
-; a_regfifo.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_regfifo.inc                                                         ;         ;
-; a_dpfifo.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_dpfifo.inc                                                          ;         ;
-; a_i2fifo.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_i2fifo.inc                                                          ;         ;
-; a_fffifo.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_fffifo.inc                                                          ;         ;
-; a_f2fifo.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_f2fifo.inc                                                          ;         ;
-; db/scfifo_0vd1.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/scfifo_0vd1.tdf                ;         ;
-; db/a_dpfifo_d281.tdf              ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/a_dpfifo_d281.tdf              ;         ;
-; db/a_fefifo_jaf.tdf               ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/a_fefifo_jaf.tdf               ;         ;
-; db/cntr_op7.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/cntr_op7.tdf                   ;         ;
-; db/dpram_ju51.tdf                 ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/dpram_ju51.tdf                 ;         ;
-; db/altsyncram_r2m1.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/altsyncram_r2m1.tdf            ;         ;
-; db/cntr_cpb.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/cntr_cpb.tdf                   ;         ;
-; dcfifo.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/dcfifo.tdf                                                            ;         ;
-; lpm_counter.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.inc                                                       ;         ;
-; lpm_add_sub.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                       ;         ;
-; altdpram.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                                          ;         ;
-; a_graycounter.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_graycounter.inc                                                     ;         ;
-; a_fefifo.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_fefifo.inc                                                          ;         ;
-; a_gray2bin.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_gray2bin.inc                                                        ;         ;
-; dffpipe.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/dffpipe.inc                                                           ;         ;
-; alt_sync_fifo.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_sync_fifo.inc                                                     ;         ;
-; lpm_compare.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_compare.inc                                                       ;         ;
-; altsyncram_fifo.inc               ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram_fifo.inc                                                   ;         ;
-; db/dcfifo_saq1.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/dcfifo_saq1.tdf                ;         ;
-; db/a_gray2bin_ugb.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/a_gray2bin_ugb.tdf             ;         ;
-; db/a_graycounter_t57.tdf          ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/a_graycounter_t57.tdf          ;         ;
-; db/a_graycounter_pjc.tdf          ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/a_graycounter_pjc.tdf          ;         ;
-; db/altsyncram_9g51.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/altsyncram_9g51.tdf            ;         ;
-; db/alt_synch_pipe_ikd.tdf         ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/alt_synch_pipe_ikd.tdf         ;         ;
-; db/dffpipe_hd9.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/dffpipe_hd9.tdf                ;         ;
-; db/dffpipe_8d9.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/dffpipe_8d9.tdf                ;         ;
-; db/dffpipe_gd9.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/dffpipe_gd9.tdf                ;         ;
-; db/alt_synch_pipe_jkd.tdf         ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/alt_synch_pipe_jkd.tdf         ;         ;
-; db/dffpipe_id9.tdf                ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/dffpipe_id9.tdf                ;         ;
-; db/cmpr_f66.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/cmpr_f66.tdf                   ;         ;
-; altsyncram.tdf                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                                        ;         ;
-; stratix_ram_block.inc             ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                 ;         ;
-; lpm_mux.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                                           ;         ;
-; lpm_decode.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                                                        ;         ;
-; a_rdenreg.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                                                         ;         ;
-; altrom.inc                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                                            ;         ;
-; altram.inc                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                                            ;         ;
-; db/altsyncram_i001.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/altsyncram_i001.tdf            ;         ;
-; lpm_mult.tdf                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf                                                          ;         ;
-; multcore.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/multcore.inc                                                          ;         ;
-; bypassff.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                                                          ;         ;
-; altshift.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                                                          ;         ;
-; db/mult_gbt.tdf                   ; yes             ; Auto-Generated Megafunction  ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/db/mult_gbt.tdf                   ;         ;
-+-----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++-----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
++-----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; rtl/fpga_demo.v                   ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/fpga_demo.v                                ;         ;
+; rtl/clkrst/clkrst.v               ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/clkrst/clkrst.v                            ;         ;
+; rtl/rgb_intf/rgb_intf.v           ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/rgb_intf/rgb_intf.v                        ;         ;
+; rtl/host_reg/host_reg.v           ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/host_reg/host_reg.v                        ;         ;
+; rtl/host_reg/spi_intf.v           ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/host_reg/spi_intf.v                        ;         ;
+; rtl/info_gen/info_gen.v           ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/info_gen/info_gen.v                        ;         ;
+; rtl/pat_gen/pat_gen.v             ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/pat_gen/pat_gen.v                          ;         ;
+; rtl/pic_gen/pic_gen.v             ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/pic_gen/pic_gen.v                          ;         ;
+; rtl/pic_gen/pic_get.v             ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/pic_gen/pic_get.v                          ;         ;
+; rtl/pic_gen/srm_intf.v            ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/pic_gen/srm_intf.v                         ;         ;
+; rtl/pic_gen/srm_ctrl.v            ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/pic_gen/srm_ctrl.v                         ;         ;
+; rtl/pic_gen/wtr.v                 ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/pic_gen/wtr.v                              ;         ;
+; rtl/pic_gen/rtr.v                 ; yes             ; User Verilog HDL File        ; D:/Progs/ET_FPGA/ET_FPGA/rtl/pic_gen/rtr.v                              ;         ;
+; rtl/megafunc/pll.v                ; yes             ; User Wizard-Generated File   ; D:/Progs/ET_FPGA/ET_FPGA/rtl/megafunc/pll.v                             ;         ;
+; rtl/megafunc/fifo/dcfifow96.v     ; yes             ; User Wizard-Generated File   ; D:/Progs/ET_FPGA/ET_FPGA/rtl/megafunc/fifo/dcfifow96.v                  ;         ;
+; rtl/megafunc/fifo/scfifow48_pic.v ; yes             ; User Wizard-Generated File   ; D:/Progs/ET_FPGA/ET_FPGA/rtl/megafunc/fifo/scfifow48_pic.v              ;         ;
+; altpll.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; aglobal130.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; stratix_pll.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
+; db/pll_altpll.v                   ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/pll_altpll.v                                ;         ;
+; scfifo.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/scfifo.tdf            ;         ;
+; a_regfifo.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_regfifo.inc         ;         ;
+; a_dpfifo.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_dpfifo.inc          ;         ;
+; a_i2fifo.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_i2fifo.inc          ;         ;
+; a_fffifo.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_fffifo.inc          ;         ;
+; a_f2fifo.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_f2fifo.inc          ;         ;
+; db/scfifo_0vd1.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/scfifo_0vd1.tdf                             ;         ;
+; db/a_dpfifo_d281.tdf              ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/a_dpfifo_d281.tdf                           ;         ;
+; db/a_fefifo_jaf.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/a_fefifo_jaf.tdf                            ;         ;
+; db/cntr_op7.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/cntr_op7.tdf                                ;         ;
+; db/dpram_ju51.tdf                 ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/dpram_ju51.tdf                              ;         ;
+; db/altsyncram_r2m1.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/altsyncram_r2m1.tdf                         ;         ;
+; db/cntr_cpb.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/cntr_cpb.tdf                                ;         ;
+; dcfifo.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/dcfifo.tdf            ;         ;
+; lpm_counter.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.inc       ;         ;
+; lpm_add_sub.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
+; altdpram.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; a_graycounter.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_graycounter.inc     ;         ;
+; a_fefifo.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_fefifo.inc          ;         ;
+; a_gray2bin.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_gray2bin.inc        ;         ;
+; dffpipe.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/dffpipe.inc           ;         ;
+; alt_sync_fifo.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_sync_fifo.inc     ;         ;
+; lpm_compare.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_compare.inc       ;         ;
+; altsyncram_fifo.inc               ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram_fifo.inc   ;         ;
+; db/dcfifo_saq1.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/dcfifo_saq1.tdf                             ;         ;
+; db/a_gray2bin_ugb.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/a_gray2bin_ugb.tdf                          ;         ;
+; db/a_graycounter_t57.tdf          ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/a_graycounter_t57.tdf                       ;         ;
+; db/a_graycounter_pjc.tdf          ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/a_graycounter_pjc.tdf                       ;         ;
+; db/altsyncram_9g51.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/altsyncram_9g51.tdf                         ;         ;
+; db/alt_synch_pipe_ikd.tdf         ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/alt_synch_pipe_ikd.tdf                      ;         ;
+; db/dffpipe_hd9.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/dffpipe_hd9.tdf                             ;         ;
+; db/dffpipe_8d9.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/dffpipe_8d9.tdf                             ;         ;
+; db/dffpipe_gd9.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/dffpipe_gd9.tdf                             ;         ;
+; db/alt_synch_pipe_jkd.tdf         ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/alt_synch_pipe_jkd.tdf                      ;         ;
+; db/dffpipe_id9.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/dffpipe_id9.tdf                             ;         ;
+; db/cmpr_f66.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/cmpr_f66.tdf                                ;         ;
+; altsyncram.tdf                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc             ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; a_rdenreg.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; db/altsyncram_i001.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/altsyncram_i001.tdf                         ;         ;
+; lpm_mult.tdf                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf          ;         ;
+; multcore.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/multcore.inc          ;         ;
+; bypassff.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc          ;         ;
+; altshift.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc          ;         ;
+; db/mult_gbt.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/Progs/ET_FPGA/ET_FPGA/db/mult_gbt.tdf                                ;         ;
++-----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -282,20 +282,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                        ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 8,581                                                                                        ;
+; Estimated Total logic elements              ; 8,591                                                                                        ;
 ;                                             ;                                                                                              ;
-; Total combinational functions               ; 7480                                                                                         ;
+; Total combinational functions               ; 7490                                                                                         ;
 ; Logic element usage by number of LUT inputs ;                                                                                              ;
-;     -- 4 input functions                    ; 3725                                                                                         ;
-;     -- 3 input functions                    ; 2336                                                                                         ;
-;     -- <=2 input functions                  ; 1419                                                                                         ;
+;     -- 4 input functions                    ; 3709                                                                                         ;
+;     -- 3 input functions                    ; 2373                                                                                         ;
+;     -- <=2 input functions                  ; 1408                                                                                         ;
 ;                                             ;                                                                                              ;
 ; Logic elements by mode                      ;                                                                                              ;
-;     -- normal mode                          ; 5854                                                                                         ;
+;     -- normal mode                          ; 5864                                                                                         ;
 ;     -- arithmetic mode                      ; 1626                                                                                         ;
 ;                                             ;                                                                                              ;
-; Total registers                             ; 3370                                                                                         ;
-;     -- Dedicated logic registers            ; 3370                                                                                         ;
+; Total registers                             ; 3371                                                                                         ;
+;     -- Dedicated logic registers            ; 3371                                                                                         ;
 ;     -- I/O registers                        ; 0                                                                                            ;
 ;                                             ;                                                                                              ;
 ; I/O pins                                    ; 157                                                                                          ;
@@ -305,8 +305,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                                                                                            ;
 ;                                             ;                                                                                              ;
 ; Maximum fan-out node                        ; clkrst:u_clkrst|pll:u_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 3595                                                                                         ;
-; Total fan-out                               ; 40518                                                                                        ;
+; Maximum fan-out                             ; 3596                                                                                         ;
+; Total fan-out                               ; 40544                                                                                        ;
 ; Average fan-out                             ; 3.54                                                                                         ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------+
 
@@ -316,14 +316,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                               ; Library Name ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |fpga_demo                                         ; 7480 (1)          ; 3370 (0)     ; 93696       ; 2            ; 0       ; 1         ; 157  ; 0            ; |fpga_demo                                                                                                                                                                        ; work         ;
+; |fpga_demo                                         ; 7490 (1)          ; 3371 (0)     ; 93696       ; 2            ; 0       ; 1         ; 157  ; 0            ; |fpga_demo                                                                                                                                                                        ; work         ;
 ;    |clkrst:u_clkrst|                               ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|clkrst:u_clkrst                                                                                                                                                        ; work         ;
 ;       |pll:u_pll|                                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|clkrst:u_clkrst|pll:u_pll                                                                                                                                              ; work         ;
 ;          |altpll:altpll_component|                 ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|clkrst:u_clkrst|pll:u_pll|altpll:altpll_component                                                                                                                      ; work         ;
 ;             |pll_altpll:auto_generated|            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|clkrst:u_clkrst|pll:u_pll|altpll:altpll_component|pll_altpll:auto_generated                                                                                            ; work         ;
-;    |host_reg:u_host_reg|                           ; 242 (231)         ; 803 (783)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|host_reg:u_host_reg                                                                                                                                                    ; work         ;
+;    |host_reg:u_host_reg|                           ; 255 (244)         ; 804 (784)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|host_reg:u_host_reg                                                                                                                                                    ; work         ;
 ;       |spi_intf:u_spi_intf|                        ; 11 (11)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|host_reg:u_host_reg|spi_intf:u_spi_intf                                                                                                                                ; work         ;
-;    |pic_gen:u_pic_gen|                             ; 739 (18)          ; 638 (39)     ; 73728       ; 2            ; 0       ; 1         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen                                                                                                                                                      ; work         ;
+;    |pic_gen:u_pic_gen|                             ; 738 (18)          ; 638 (39)     ; 73728       ; 2            ; 0       ; 1         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen                                                                                                                                                      ; work         ;
 ;       |dcfifow96:u_dcfifow96|                      ; 74 (0)            ; 106 (0)      ; 24576       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|dcfifow96:u_dcfifow96                                                                                                                                ; work         ;
 ;          |dcfifo:dcfifo_component|                 ; 74 (0)            ; 106 (0)      ; 24576       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|dcfifow96:u_dcfifow96|dcfifo:dcfifo_component                                                                                                        ; work         ;
 ;             |dcfifo_saq1:auto_generated|           ; 74 (14)           ; 106 (27)     ; 24576       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|dcfifow96:u_dcfifow96|dcfifo:dcfifo_component|dcfifo_saq1:auto_generated                                                                             ; work         ;
@@ -353,16 +353,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                   |cntr_cpb:wr_ptr|                ; 10 (10)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|scfifow48_pic:u_scfifow48_pic|scfifo:scfifo_component|scfifo_0vd1:auto_generated|a_dpfifo_d281:dpfifo|cntr_cpb:wr_ptr                                ; work         ;
 ;                   |dpram_ju51:FIFOram|             ; 0 (0)             ; 0 (0)        ; 49152       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|scfifow48_pic:u_scfifow48_pic|scfifo:scfifo_component|scfifo_0vd1:auto_generated|a_dpfifo_d281:dpfifo|dpram_ju51:FIFOram                             ; work         ;
 ;                      |altsyncram_r2m1:altsyncram1| ; 0 (0)             ; 0 (0)        ; 49152       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|scfifow48_pic:u_scfifow48_pic|scfifo:scfifo_component|scfifo_0vd1:auto_generated|a_dpfifo_d281:dpfifo|dpram_ju51:FIFOram|altsyncram_r2m1:altsyncram1 ; work         ;
-;       |srm_ctrl:u_srm_ctrl|                        ; 180 (180)         ; 102 (102)    ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl                                                                                                                                  ; work         ;
+;       |srm_ctrl:u_srm_ctrl|                        ; 179 (179)         ; 102 (102)    ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl                                                                                                                                  ; work         ;
 ;          |lpm_mult:Mult0|                          ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl|lpm_mult:Mult0                                                                                                                   ; work         ;
 ;             |mult_gbt:auto_generated|              ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl|lpm_mult:Mult0|mult_gbt:auto_generated                                                                                           ; work         ;
 ;       |srm_intf:u_srm_intf|                        ; 317 (317)         ; 146 (146)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|srm_intf:u_srm_intf                                                                                                                                  ; work         ;
 ;       |wtr:u_wtr|                                  ; 2 (2)             ; 98 (98)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|pic_gen:u_pic_gen|wtr:u_wtr                                                                                                                                            ; work         ;
-;    |rgb_intf:u_rgb_intf|                           ; 6498 (525)        ; 1925 (340)   ; 19968       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|rgb_intf:u_rgb_intf                                                                                                                                                    ; work         ;
-;       |info_gen:u_info_gen|                        ; 651 (651)         ; 235 (235)    ; 19968       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen                                                                                                                                ; work         ;
+;    |rgb_intf:u_rgb_intf|                           ; 6496 (525)        ; 1925 (340)   ; 19968       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|rgb_intf:u_rgb_intf                                                                                                                                                    ; work         ;
+;       |info_gen:u_info_gen|                        ; 668 (668)         ; 235 (235)    ; 19968       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen                                                                                                                                ; work         ;
 ;          |altsyncram:WideOr59_rtl_0|               ; 0 (0)             ; 0 (0)        ; 19968       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|altsyncram:WideOr59_rtl_0                                                                                                      ; work         ;
 ;             |altsyncram_i001:auto_generated|       ; 0 (0)             ; 0 (0)        ; 19968       ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|altsyncram:WideOr59_rtl_0|altsyncram_i001:auto_generated                                                                       ; work         ;
-;       |pat_gen:u_pat_gen|                          ; 5322 (5322)       ; 1350 (1350)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen                                                                                                                                  ; work         ;
+;       |pat_gen:u_pat_gen|                          ; 5303 (5303)       ; 1350 (1350)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen                                                                                                                                  ; work         ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -396,15 +396,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                ;
-+--------+--------------+---------+--------------+--------------+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                            ; IP Include File                                                                                                         ;
-+--------+--------------+---------+--------------+--------------+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |fpga_demo|clkrst:u_clkrst|pll:u_pll                       ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/megafunc/pll.v                ;
-; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |fpga_demo|pic_gen:u_pic_gen|dcfifow96:u_dcfifow96         ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/megafunc/fifo/dcfifow96.v     ;
-; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |fpga_demo|pic_gen:u_pic_gen|scfifow48_pic:u_scfifow48_pic ; E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/rtl/megafunc/fifo/scfifow48_pic.v ;
-+--------+--------------+---------+--------------+--------------+------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                   ;
++--------+--------------+---------+--------------+--------------+------------------------------------------------------------+------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                            ; IP Include File                                            ;
++--------+--------------+---------+--------------+--------------+------------------------------------------------------------+------------------------------------------------------------+
+; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |fpga_demo|clkrst:u_clkrst|pll:u_pll                       ; D:/Progs/ET_FPGA/ET_FPGA/rtl/megafunc/pll.v                ;
+; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |fpga_demo|pic_gen:u_pic_gen|dcfifow96:u_dcfifow96         ; D:/Progs/ET_FPGA/ET_FPGA/rtl/megafunc/fifo/dcfifow96.v     ;
+; Altera ; FIFO         ; 13.0    ; N/A          ; N/A          ; |fpga_demo|pic_gen:u_pic_gen|scfifow48_pic:u_scfifow48_pic ; D:/Progs/ET_FPGA/ET_FPGA/rtl/megafunc/fifo/scfifow48_pic.v ;
++--------+--------------+---------+--------------+--------------+------------------------------------------------------------+------------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -3557,7 +3557,6 @@ Encoding Type:  One-Hot
 ; rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_block_h[8]                                                                    ; Stuck at GND due to stuck port data_in                                    ;
 ; rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_block_v[8]                                                                    ; Stuck at GND due to stuck port data_in                                    ;
 ; rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[22][0]                                                                  ; Stuck at GND due to stuck port data_in                                    ;
-; host_reg:u_host_reg|tx_data[7]                                                                                           ; Stuck at GND due to stuck port data_in                                    ;
 ; rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_character[3][34]                                                               ; Stuck at VCC due to stuck port data_in                                    ;
 ; rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_character[6][34]                                                               ; Merged with rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_character[1][20]    ;
 ; rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_character[4][34]                                                               ; Merged with rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_character[0][37]    ;
@@ -3570,7 +3569,7 @@ Encoding Type:  One-Hot
 ; rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|vsec[1..7]                                                                         ; Lost fanout                                                               ;
 ; rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_gray_h[1..7]                                                                  ; Lost fanout                                                               ;
 ; rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_gray_v[1..7]                                                                  ; Lost fanout                                                               ;
-; Total Number of Removed Registers = 3758                                                                                 ;                                                                           ;
+; Total Number of Removed Registers = 3757                                                                                 ;                                                                           ;
 +--------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 
@@ -3605,12 +3604,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3370  ;
-; Number of registers using Synchronous Clear  ; 327   ;
+; Total registers                              ; 3371  ;
+; Number of registers using Synchronous Clear  ; 325   ;
 ; Number of registers using Synchronous Load   ; 154   ;
 ; Number of registers using Asynchronous Clear ; 2739  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1609  ;
+; Number of registers using Clock Enable       ; 1610  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -3650,15 +3649,15 @@ Encoding Type:  One-Hot
 ; rgb_intf:u_rgb_intf|vsync_buf4                                                                                                    ; 1       ;
 ; rgb_intf:u_rgb_intf|hsync_buf3                                                                                                    ; 1       ;
 ; rgb_intf:u_rgb_intf|vsync_buf3                                                                                                    ; 1       ;
-; rgb_intf:u_rgb_intf|data_buf[0]                                                                                                   ; 3       ;
+; rgb_intf:u_rgb_intf|data_buf[0]                                                                                                   ; 4       ;
 ; host_reg:u_host_reg|info_y_axis[2]                                                                                                ; 5       ;
 ; host_reg:u_host_reg|info_y_axis[0]                                                                                                ; 8       ;
-; rgb_intf:u_rgb_intf|data_buf[31]                                                                                                  ; 3       ;
+; rgb_intf:u_rgb_intf|data_buf[31]                                                                                                  ; 4       ;
 ; rgb_intf:u_rgb_intf|data_buf[30]                                                                                                  ; 3       ;
-; rgb_intf:u_rgb_intf|data_buf[29]                                                                                                  ; 3       ;
+; rgb_intf:u_rgb_intf|data_buf[29]                                                                                                  ; 4       ;
 ; rgb_intf:u_rgb_intf|data_buf[28]                                                                                                  ; 3       ;
 ; rgb_intf:u_rgb_intf|data_buf[27]                                                                                                  ; 3       ;
-; rgb_intf:u_rgb_intf|data_buf[26]                                                                                                  ; 3       ;
+; rgb_intf:u_rgb_intf|data_buf[26]                                                                                                  ; 4       ;
 ; rgb_intf:u_rgb_intf|data_buf[1]                                                                                                   ; 3       ;
 ; host_reg:u_host_reg|pic_last_bst_num[8]                                                                                           ; 1       ;
 ; pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl|srm_op_eof                                                                                  ; 3       ;
@@ -3666,6 +3665,20 @@ Encoding Type:  One-Hot
 ; rgb_intf:u_rgb_intf|vsync_buf2                                                                                                    ; 1       ;
 ; rgb_intf:u_rgb_intf|hsync_buf1                                                                                                    ; 1       ;
 ; rgb_intf:u_rgb_intf|vsync_buf1                                                                                                    ; 1       ;
+; host_reg:u_host_reg|vbp[2]                                                                                                        ; 1       ;
+; host_reg:u_host_reg|vpw[1]                                                                                                        ; 2       ;
+; host_reg:u_host_reg|vact[10]                                                                                                      ; 3       ;
+; host_reg:u_host_reg|vact[9]                                                                                                       ; 3       ;
+; host_reg:u_host_reg|vact[8]                                                                                                       ; 3       ;
+; host_reg:u_host_reg|vact[7]                                                                                                       ; 3       ;
+; host_reg:u_host_reg|hbp[4]                                                                                                        ; 1       ;
+; host_reg:u_host_reg|hpw[4]                                                                                                        ; 2       ;
+; host_reg:u_host_reg|hbp[2]                                                                                                        ; 1       ;
+; host_reg:u_host_reg|hpw[2]                                                                                                        ; 2       ;
+; host_reg:u_host_reg|hact[10]                                                                                                      ; 2       ;
+; host_reg:u_host_reg|hact[5]                                                                                                       ; 2       ;
+; host_reg:u_host_reg|hact[4]                                                                                                       ; 2       ;
+; host_reg:u_host_reg|hact[3]                                                                                                       ; 2       ;
 ; host_reg:u_host_reg|graylvl1[0]                                                                                                   ; 1       ;
 ; host_reg:u_host_reg|graylvl3[0]                                                                                                   ; 1       ;
 ; host_reg:u_host_reg|graylvl2[1]                                                                                                   ; 1       ;
@@ -3681,36 +3694,22 @@ Encoding Type:  One-Hot
 ; host_reg:u_host_reg|graylvl3[5]                                                                                                   ; 1       ;
 ; host_reg:u_host_reg|otp_times2[5]                                                                                                 ; 1       ;
 ; host_reg:u_host_reg|otp_times1[5]                                                                                                 ; 1       ;
-; host_reg:u_host_reg|hbp[4]                                                                                                        ; 1       ;
-; host_reg:u_host_reg|hpw[4]                                                                                                        ; 2       ;
-; host_reg:u_host_reg|hbp[2]                                                                                                        ; 1       ;
-; host_reg:u_host_reg|hpw[2]                                                                                                        ; 2       ;
-; host_reg:u_host_reg|hact[10]                                                                                                      ; 2       ;
-; host_reg:u_host_reg|hact[5]                                                                                                       ; 2       ;
-; host_reg:u_host_reg|hact[4]                                                                                                       ; 2       ;
-; host_reg:u_host_reg|hact[3]                                                                                                       ; 2       ;
-; host_reg:u_host_reg|vbp[2]                                                                                                        ; 1       ;
-; host_reg:u_host_reg|vpw[1]                                                                                                        ; 2       ;
-; host_reg:u_host_reg|vact[10]                                                                                                      ; 3       ;
-; host_reg:u_host_reg|vact[9]                                                                                                       ; 3       ;
-; host_reg:u_host_reg|vact[8]                                                                                                       ; 3       ;
-; host_reg:u_host_reg|vact[7]                                                                                                       ; 3       ;
+; host_reg:u_host_reg|pic_bst_num[11]                                                                                               ; 1       ;
+; host_reg:u_host_reg|pic_bst_num[9]                                                                                                ; 1       ;
+; host_reg:u_host_reg|pic_bst_num[8]                                                                                                ; 1       ;
 ; host_reg:u_host_reg|pic_bst_num[7]                                                                                                ; 1       ;
 ; host_reg:u_host_reg|pic_bst_num[6]                                                                                                ; 1       ;
 ; host_reg:u_host_reg|pic_bst_num[4]                                                                                                ; 1       ;
 ; host_reg:u_host_reg|pic_bst_num[3]                                                                                                ; 1       ;
 ; host_reg:u_host_reg|pic_bst_num[2]                                                                                                ; 1       ;
 ; host_reg:u_host_reg|pic_bst_num[1]                                                                                                ; 1       ;
-; host_reg:u_host_reg|pic_bst_num[11]                                                                                               ; 1       ;
-; host_reg:u_host_reg|pic_bst_num[9]                                                                                                ; 1       ;
-; host_reg:u_host_reg|pic_bst_num[8]                                                                                                ; 1       ;
 ; rgb_intf:u_rgb_intf|hsync_buf                                                                                                     ; 1       ;
 ; rgb_intf:u_rgb_intf|vsync_buf                                                                                                     ; 1       ;
 ; pic_gen:u_pic_gen|dcfifow96:u_dcfifow96|dcfifo:dcfifo_component|dcfifo_saq1:auto_generated|a_graycounter_t57:rdptr_g1p|counter5a0 ; 7       ;
+; host_reg:u_host_reg|vfp[1]                                                                                                        ; 1       ;
+; host_reg:u_host_reg|vfp[2]                                                                                                        ; 1       ;
 ; host_reg:u_host_reg|hfp[5]                                                                                                        ; 1       ;
 ; host_reg:u_host_reg|hfp[3]                                                                                                        ; 1       ;
-; host_reg:u_host_reg|vfp[2]                                                                                                        ; 1       ;
-; host_reg:u_host_reg|vfp[1]                                                                                                        ; 1       ;
 ; pic_gen:u_pic_gen|dcfifow96:u_dcfifow96|dcfifo:dcfifo_component|dcfifo_saq1:auto_generated|a_graycounter_pjc:wrptr_g1p|counter8a0 ; 6       ;
 ; pic_gen:u_pic_gen|dcfifow96:u_dcfifow96|dcfifo:dcfifo_component|dcfifo_saq1:auto_generated|a_graycounter_t57:rdptr_g1p|parity6    ; 4       ;
 ; pic_gen:u_pic_gen|dcfifow96:u_dcfifow96|dcfifo:dcfifo_component|dcfifo_saq1:auto_generated|a_graycounter_pjc:wrptr_g1p|parity9    ; 4       ;
@@ -3736,98 +3735,98 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
-; 3:1                ; 48 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|rgb_data[46]                           ;
+; 3:1                ; 48 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|rgb_data[2]                            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|srm_intf:u_srm_intf|cs_op[4]             ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|g_data_out[0]      ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|srm_intf:u_srm_intf|cnt_init_ref[6]      ;
-; 3:1                ; 48 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|pic_get:u_pic_get|pic_fifo_wdata[43]     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|scale_h[3]         ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|rtr:u_rtr|data[9]                        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_asus[16]    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_htc[1]      ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry[11]     ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|g_data_out[4]      ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|srm_intf:u_srm_intf|cnt_init_ref[3]      ;
+; 3:1                ; 48 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|pic_get:u_pic_get|pic_fifo_wdata[14]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|scale_h[7]         ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|rtr:u_rtr|data[3]                        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_asus[21]    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_htc[4]      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry[12]     ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry[0]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry256[11]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_crst_waku[13]    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det2[7]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_RGBbar[18]       ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_gbar[7]          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_crs_brd[1]       ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|te_cnt[9]                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry256[9]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_crst_waku[6]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det2[2]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_RGBbar[17]       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_gbar[2]          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_crs_brd[3]       ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|te_cnt[7]                              ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_block_v[5]      ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_block_v[3]      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_block_h[7]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|hsec_cnt[3]          ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|cbar_gry256_c_cnt[1] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_gray_h[7]       ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_cnt_h[4]        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_block_h[5]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|hsec_cnt[1]          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|cbar_gry256_c_cnt[2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_gray_h[5]       ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_cnt_h[5]        ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|cbar_gry_c_cnt[4]    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|data_buf[22]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_gcbar[13]        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_1x1_dotbar1[23]  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_1x1_dotbar1[13]  ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl|srm_op_addr[18]      ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpga_demo|host_reg:u_host_reg|spi_intf:u_spi_intf|cnt_rx_bit[0]      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|data_buf[32]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_gcbar[14]        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_1x1_dotbar1[20]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_1x1_dotbar1[8]   ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl|srm_op_addr[10]      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpga_demo|host_reg:u_host_reg|spi_intf:u_spi_intf|cnt_rx_bit[1]      ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|pic_get:u_pic_get|wcnt[0]                ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|buf_index[2]       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|cnt8[0]            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|scale_v[0]         ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|line_cnt[1]                            ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pixcel_cnt[11]                         ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det[19]      ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_crst_waku[23]    ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry[3]      ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry[19]     ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry256[3]   ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry256[21]  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_character[21]    ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_otp_check[17]    ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_otp_NG[15]       ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_message[22]      ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|vsec_cnt[7]          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|scale_h[6]           ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_gray_v[0]       ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_cnt_v[11]       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|hsec[1]              ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|buf_index[1]       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|cnt8[2]            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|scale_v[5]         ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|line_cnt[15]                           ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pixcel_cnt[2]                          ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det[2]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_crst_waku[17]    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry[7]      ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry[23]     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry256[1]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_cbar_gry256[23]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_character[23]    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_otp_check[8]     ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_otp_NG[19]       ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_message[11]      ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|vsec_cnt[1]          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|scale_h[3]           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_gray_v[5]       ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|mark_cnt_v[6]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|hsec[3]              ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|cnt16[0]           ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det[13]      ;
-; 5:1                ; 48 bits   ; 144 LEs       ; 144 LEs              ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det1[5]      ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|hcnt16[1]            ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|scale_v[6]           ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_scale_h[2]       ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_character[6][34] ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_scale_v[3]       ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|NG_scale_h[3]        ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|NG_scale_v[5]        ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|message_scale_h[3]   ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|message_scale_v[3]   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|vsec[7]              ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|h_sec12              ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[4][1]     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det[14]      ;
+; 5:1                ; 48 bits   ; 144 LEs       ; 144 LEs              ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det4[2]      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|hcnt16[0]            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|scale_v[2]           ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_scale_h[4]       ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_character[3][14] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_scale_v[0]       ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|NG_scale_h[0]        ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|NG_scale_v[3]        ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|message_scale_h[0]   ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|message_scale_v[1]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|vsec[6]              ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|h_sec4               ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[3][3]     ;
 ; 6:1                ; 38 bits   ; 152 LEs       ; 76 LEs               ; 76 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[14][0]    ;
-; 6:1                ; 26 bits   ; 104 LEs       ; 52 LEs               ; 52 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[19][5]    ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|vcnt16[0]            ;
+; 6:1                ; 26 bits   ; 104 LEs       ; 52 LEs               ; 52 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[15][6]    ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|vcnt16[1]            ;
 ; 6:1                ; 6 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_hcnt48[5]        ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_vcnt16[4]        ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|NG_hcnt24[3]         ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|NG_vcnt16[0]         ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|message_hcnt64[3]    ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|otp_vcnt16[0]        ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|NG_hcnt24[1]         ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|NG_vcnt16[4]         ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|message_hcnt64[0]    ;
 ; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|message_vcnt16[4]    ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl|srm_rd_addr[6]       ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[2][4]     ;
-; 7:1                ; 24 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[6][5]     ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[12][0]    ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det3[0]      ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det3[17]     ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|bright_dot[0]        ;
-; 8:1                ; 30 bits   ; 150 LEs       ; 120 LEs              ; 30 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|message[3][25]       ;
-; 256:1              ; 7 bits    ; 1190 LEs      ; 168 LEs              ; 1022 LEs               ; Yes        ; |fpga_demo|host_reg:u_host_reg|tx_data[2]                             ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[13][3]    ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|bright_dot[10]       ;
-; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|h_div256_gry[6]      ;
-; 11:1               ; 3 bits    ; 21 LEs        ; 3 LEs                ; 18 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|h_div256_cnt[1]      ;
-; 13:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|bright_dot[16]       ;
-; 17:1               ; 3 bits    ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|v_sec2               ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |fpga_demo|pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl|srm_rd_addr[11]      ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[1][0]     ;
+; 7:1                ; 24 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[6][6]     ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[10][1]    ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det3[10]     ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|pat_oln_det3[16]     ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|bright_dot[6]        ;
+; 8:1                ; 30 bits   ; 150 LEs       ; 120 LEs              ; 30 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|message[3][11]       ;
+; 256:1              ; 8 bits    ; 1360 LEs      ; 192 LEs              ; 1168 LEs               ; Yes        ; |fpga_demo|host_reg:u_host_reg|tx_data[2]                             ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|info_gen:u_info_gen|info_buf[13][5]    ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|bright_dot[13]       ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 8 LEs                ; 48 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|h_div256_gry[1]      ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 3 LEs                ; 18 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|h_div256_cnt[3]      ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 24 LEs               ; 40 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|bright_dot[17]       ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|v_sec4               ;
 ; 16:1               ; 8 bits    ; 80 LEs        ; 8 LEs                ; 72 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|v_div256_gry[0]      ;
 ; 16:1               ; 3 bits    ; 30 LEs        ; 3 LEs                ; 27 LEs                 ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|v_div256_cnt[3]      ;
 ; 68:1               ; 2 bits    ; 90 LEs        ; 84 LEs               ; 6 LEs                  ; Yes        ; |fpga_demo|rgb_intf:u_rgb_intf|pat_gen:u_pat_gen|bbuf[0]              ;
@@ -4042,9 +4041,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK5_MULTIPLY_BY              ; 1                     ; Untyped                                ;
 ; CLK4_MULTIPLY_BY              ; 1                     ; Untyped                                ;
 ; CLK3_MULTIPLY_BY              ; 1                     ; Untyped                                ;
-; CLK2_MULTIPLY_BY              ; 170                   ; Signed Integer                         ;
-; CLK1_MULTIPLY_BY              ; 170                   ; Signed Integer                         ;
-; CLK0_MULTIPLY_BY              ; 170                   ; Signed Integer                         ;
+; CLK2_MULTIPLY_BY              ; 55                    ; Signed Integer                         ;
+; CLK1_MULTIPLY_BY              ; 55                    ; Signed Integer                         ;
+; CLK0_MULTIPLY_BY              ; 55                    ; Signed Integer                         ;
 ; CLK9_DIVIDE_BY                ; 0                     ; Untyped                                ;
 ; CLK8_DIVIDE_BY                ; 0                     ; Untyped                                ;
 ; CLK7_DIVIDE_BY                ; 0                     ; Untyped                                ;
@@ -4052,9 +4051,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK5_DIVIDE_BY                ; 1                     ; Untyped                                ;
 ; CLK4_DIVIDE_BY                ; 1                     ; Untyped                                ;
 ; CLK3_DIVIDE_BY                ; 1                     ; Untyped                                ;
-; CLK2_DIVIDE_BY                ; 27                    ; Signed Integer                         ;
-; CLK1_DIVIDE_BY                ; 27                    ; Signed Integer                         ;
-; CLK0_DIVIDE_BY                ; 27                    ; Signed Integer                         ;
+; CLK2_DIVIDE_BY                ; 9                     ; Signed Integer                         ;
+; CLK1_DIVIDE_BY                ; 9                     ; Signed Integer                         ;
+; CLK0_DIVIDE_BY                ; 9                     ; Signed Integer                         ;
 ; CLK9_PHASE_SHIFT              ; 0                     ; Untyped                                ;
 ; CLK8_PHASE_SHIFT              ; 0                     ; Untyped                                ;
 ; CLK7_PHASE_SHIFT              ; 0                     ; Untyped                                ;
@@ -4062,7 +4061,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK5_PHASE_SHIFT              ; 0                     ; Untyped                                ;
 ; CLK4_PHASE_SHIFT              ; 0                     ; Untyped                                ;
 ; CLK3_PHASE_SHIFT              ; 0                     ; Untyped                                ;
-; CLK2_PHASE_SHIFT              ; 368                   ; Untyped                                ;
+; CLK2_PHASE_SHIFT              ; 379                   ; Untyped                                ;
 ; CLK1_PHASE_SHIFT              ; 0                     ; Untyped                                ;
 ; CLK0_PHASE_SHIFT              ; 0                     ; Untyped                                ;
 ; CLK5_TIME_DELAY               ; 0                     ; Untyped                                ;
@@ -4403,6 +4402,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ADDR_PIC_SIZE_RSV       ; 00100100          ; Unsigned Binary    ;
 ; ADDR_PIC_LAST_BST_NUM_1 ; 00100101          ; Unsigned Binary    ;
 ; ADDR_PIC_LAST_BST_NUM_2 ; 00100110          ; Unsigned Binary    ;
+; ADDR_TEST               ; 00101000          ; Unsigned Binary    ;
 ; ADDR_DIS_MODE           ; 00110000          ; Unsigned Binary    ;
 ; ADDR_DIS_SN             ; 00110001          ; Unsigned Binary    ;
 ; ADDR_PORT_MAP           ; 00110010          ; Unsigned Binary    ;
@@ -4839,7 +4839,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:30     ;
+; Top            ; 00:00:36     ;
 +----------------+--------------+
 
 
@@ -4849,7 +4849,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jan 07 11:49:42 2019
+    Info: Processing started: Wed Jan 23 14:25:13 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpga_demo -c FPGA_DEMO
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/fpga_demo.v
@@ -4894,18 +4894,18 @@ Info (12128): Elaborating entity "altpll" for hierarchy "clkrst:u_clkrst|pll:u_p
 Info (12130): Elaborated megafunction instantiation "clkrst:u_clkrst|pll:u_pll|altpll:altpll_component"
 Info (12133): Instantiated megafunction "clkrst:u_clkrst|pll:u_pll|altpll:altpll_component" with the following parameter:
     Info (12134): Parameter "bandwidth_type" = "AUTO"
-    Info (12134): Parameter "clk0_divide_by" = "27"
+    Info (12134): Parameter "clk0_divide_by" = "9"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-    Info (12134): Parameter "clk0_multiply_by" = "170"
+    Info (12134): Parameter "clk0_multiply_by" = "55"
     Info (12134): Parameter "clk0_phase_shift" = "0"
-    Info (12134): Parameter "clk1_divide_by" = "27"
+    Info (12134): Parameter "clk1_divide_by" = "9"
     Info (12134): Parameter "clk1_duty_cycle" = "50"
-    Info (12134): Parameter "clk1_multiply_by" = "170"
+    Info (12134): Parameter "clk1_multiply_by" = "55"
     Info (12134): Parameter "clk1_phase_shift" = "0"
-    Info (12134): Parameter "clk2_divide_by" = "27"
+    Info (12134): Parameter "clk2_divide_by" = "9"
     Info (12134): Parameter "clk2_duty_cycle" = "50"
-    Info (12134): Parameter "clk2_multiply_by" = "170"
-    Info (12134): Parameter "clk2_phase_shift" = "368"
+    Info (12134): Parameter "clk2_multiply_by" = "55"
+    Info (12134): Parameter "clk2_phase_shift" = "379"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "37037"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
@@ -4959,7 +4959,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/pll_
     Info (12023): Found entity 1: pll_altpll
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "clkrst:u_clkrst|pll:u_pll|altpll:altpll_component|pll_altpll:auto_generated"
 Info (12128): Elaborating entity "host_reg" for hierarchy "host_reg:u_host_reg"
-Warning (10230): Verilog HDL assignment warning at host_reg.v(895): truncated value with size 8 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at host_reg.v(897): truncated value with size 8 to match size of target (4)
 Info (12128): Elaborating entity "spi_intf" for hierarchy "host_reg:u_host_reg|spi_intf:u_spi_intf"
 Info (12128): Elaborating entity "rgb_intf" for hierarchy "rgb_intf:u_rgb_intf"
 Info (12128): Elaborating entity "info_gen" for hierarchy "rgb_intf:u_rgb_intf|info_gen:u_info_gen"
@@ -5116,27 +5116,27 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "srm_udqm" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 30 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/output_files/FPGA_DEMO.map.smsg
+Info (144001): Generated suppressed messages file D:/Progs/ET_FPGA/ET_FPGA/output_files/FPGA_DEMO.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 9099 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 9111 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 86 output pins
     Info (21060): Implemented 48 bidirectional pins
-    Info (21061): Implemented 8717 logic cells
+    Info (21061): Implemented 8729 logic cells
     Info (21064): Implemented 222 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 2 DSP elements
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 551 megabytes
-    Info: Processing ended: Mon Jan 07 11:50:18 2019
-    Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Peak virtual memory: 563 megabytes
+    Info: Processing ended: Wed Jan 23 14:25:58 2019
+    Info: Elapsed time: 00:00:45
+    Info: Total CPU time (on all processors): 00:00:44
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/output_files/FPGA_DEMO.map.smsg.
+The suppressed messages can be found in D:/Progs/ET_FPGA/ET_FPGA/output_files/FPGA_DEMO.map.smsg.
 
 

@@ -1,5 +1,5 @@
 Flow report for FPGA_DEMO
-Mon Jan 07 11:51:39 2019
+Wed Jan 23 14:27:33 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Mon Jan 07 11:51:29 2019           ;
+; Flow Status                        ; Successful - Wed Jan 23 14:27:20 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; FPGA_DEMO                                       ;
 ; Top-level Entity Name              ; fpga_demo                                       ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE10F17I7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 8,286 / 10,320 ( 80 % )                         ;
-;     Total combinational functions  ; 7,483 / 10,320 ( 73 % )                         ;
-;     Dedicated logic registers      ; 3,370 / 10,320 ( 33 % )                         ;
-; Total registers                    ; 3370                                            ;
+; Total logic elements               ; 8,248 / 10,320 ( 80 % )                         ;
+;     Total combinational functions  ; 7,493 / 10,320 ( 73 % )                         ;
+;     Dedicated logic registers      ; 3,371 / 10,320 ( 33 % )                         ;
+; Total registers                    ; 3371                                            ;
 ; Total pins                         ; 157 / 180 ( 87 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 93,696 / 423,936 ( 22 % )                       ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/07/2019 11:49:42 ;
+; Start date & time ; 01/23/2019 14:25:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FPGA_DEMO           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+--------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 233360578522187.154683298208088      ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 150935011708.154822471414968         ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; ALTPLL                               ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; FIFO                                 ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; FIFO                                 ; --            ; --          ; --         ;
@@ -105,11 +105,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:34     ; 1.0                     ; 532 MB              ; 00:00:34                           ;
-; Fitter                    ; 00:01:04     ; 1.0                     ; 805 MB              ; 00:01:04                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 417 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:09     ; 1.0                     ; 575 MB              ; 00:00:09                           ;
-; Total                     ; 00:01:49     ; --                      ; --                  ; 00:01:49                           ;
+; Analysis & Synthesis      ; 00:00:43     ; 1.0                     ; 544 MB              ; 00:00:42                           ;
+; Fitter                    ; 00:01:15     ; 1.0                     ; 813 MB              ; 00:01:15                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 421 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:12     ; 1.0                     ; 570 MB              ; 00:00:12                           ;
+; Total                     ; 00:02:12     ; --                      ; --                  ; 00:02:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,10 +118,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; XMPCRDD0019      ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; XMPCRDD0019      ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; XMPCRDD0019      ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; XMPCRDD0019      ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; XMPCRDD0070      ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; XMPCRDD0070      ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; XMPCRDD0070      ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; XMPCRDD0070      ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

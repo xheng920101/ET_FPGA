@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EPCS4) Path("E:/01-Platform/01-ARM+FPGA+2828/01-code/02-FPAG for HD FHD/V2.1/FPGA_DEMO_HD FHD_V2P1/output_files/") File("FPGA_DEMO.pof") MfrSpec(OpMask(1) Child_OpMask(1 1));
+		Device PartName(EPCS4) Path("D:/Progs/ET_FPGA/ET_FPGA/output_files/") File("FPGA_DEMO.pof") MfrSpec(OpMask(1) Child_OpMask(1 1));
 
 ChainEnd;
 

@@ -1,0 +1,6 @@
+
+State Machine - |fpga_demo|pic_gen:u_pic_gen|srm_ctrl:u_srm_ctrl|cs_srm_ctrl
+Name cs_srm_ctrl.OP_IDLE cs_srm_ctrl.OP_RD cs_srm_ctrl.OP_WR 
+cs_srm_ctrl.OP_IDLE 0 0 0 
+cs_srm_ctrl.OP_WR 1 0 1 
+cs_srm_ctrl.OP_RD 1 1 0 
