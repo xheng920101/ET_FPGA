@@ -1,0 +1,65 @@
+//*****************************************************************************
+// COPYRIGHT (c) 2013, Xiamen Tianma Microelectronics Co, Ltd
+//
+// File name     :  wtr.v
+// Module name   :  wtr
+//
+// Author        :  sijian_luo
+// Email         :  sijian_luo@tianma.cn
+// Version       :  v 1.0
+//
+// Function      :  write data width convert - 32bits -> 96bits
+// Called by     :  --
+//
+// ----------------------------------------------------------------------------
+// Revison
+// 2013-12-3     :  create file
+//*****************************************************************************
+module wtr(
+    input                 clk               ,
+    input                 rst_n             ,
+    input                 invld             ,
+    input       [31:0]    indata            ,
+    output reg            outvld            ,
+    output reg  [95:0]    outdata
+);
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// variable declaration
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+reg     [2:0]                   sft_reg                         ;
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// block statement
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+always @(posedge clk or negedge rst_n)
+begin
+    if (rst_n == 1'b0)
+    begin
+        sft_reg <= 3'b001;
+        outvld  <= 1'b0;
+        outdata <= 96'b0;
+    end
+    else
+    begin
+        if (invld == 1'b1)
+        begin
+            sft_reg <= {sft_reg[1:0], sft_reg[2]};
+            if (sft_reg[2] == 1'b1)
+            begin
+                outvld  <= 1'b1;
+            end
+            else
+            begin
+                outvld  <= 1'b0;
+            end
+            outdata <= {outdata[63:0], indata};
+        end
+        else
+        begin
+            outvld  <= 1'b0;
+        end
+    end
+end
+
+endmodule

@@ -1,0 +1,104 @@
+//*****************************************************************************
+// COPYRIGHT (c) 2014, Xiamen Tianma Microelectronics Co, Ltd
+//
+// File name     :  pic_get.v
+// Module name   :  pic_get
+//
+// Author        :  sijian_luo
+// Email         :  sijian_luo@tianma.cn
+// Version       :  v 1.0
+//
+// Function      :  get picture data from ARM
+// Called by     :  --
+//
+// ----------------------------------------------------------------------------
+// Revison
+// 2014-07-23    :  create file
+//*****************************************************************************
+module pic_get (
+    input                 clk               ,
+    input                 rst_n             ,
+	 
+    input                 arm_pic_wr        ,
+    input       [15:0]    arm_pic_wdata     ,
+    input                 arm_pic_wen       ,
+	 
+    input                 pic_fifo_afull    ,
+    output reg            pic_fifo_wr       ,
+    output reg  [31:0]    pic_fifo_wdata
+);
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// parameters
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// variable declaration
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+reg                             arm_pic_wr_d1                   ;
+reg                             arm_pic_wr_d2                   ;
+reg                             arm_pic_wr_d3                   ;
+reg     [15:0]                  arm_pic_wdata_d1                ;
+reg     [15:0]                  arm_pic_wdata_d2                ;
+
+reg                             wcnt                            ;
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// continuous assignment
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// block statement
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+always @(posedge clk)
+begin
+    begin
+        arm_pic_wr_d1 <= arm_pic_wr;
+        arm_pic_wr_d2 <= arm_pic_wr_d1;
+        arm_pic_wr_d3 <= arm_pic_wr_d2;
+        arm_pic_wdata_d1 <= arm_pic_wdata;
+        arm_pic_wdata_d2 <= arm_pic_wdata_d1;
+    end
+end
+
+always @(posedge clk or negedge rst_n)
+begin
+    if (rst_n == 1'b0)
+    begin
+        pic_fifo_wr <= 1'b0;
+        pic_fifo_wdata <= 32'b0;
+        wcnt <= 1'b0;
+    end
+    else
+    begin
+        if (arm_pic_wen == 1'b0)
+        begin
+            pic_fifo_wr <= 1'b0;
+            pic_fifo_wdata <= 32'b0;
+            wcnt <= 1'b0;
+        end
+        else
+        begin
+            if ((arm_pic_wr_d2 == 1'b1) && (arm_pic_wr_d3 == 1'b0))
+            begin
+                wcnt <= ~ wcnt;
+                pic_fifo_wdata <= {pic_fifo_wdata[15:0], arm_pic_wdata_d2};
+                if (wcnt == 1'b1)
+                begin
+                    pic_fifo_wr <= 1'b1;
+                end
+                else
+                begin
+                    pic_fifo_wr <= 1'b0;
+                end
+                
+            end
+            else
+            begin
+                pic_fifo_wr <= 1'b0;
+            end
+        end
+    end
+end
+
+endmodule

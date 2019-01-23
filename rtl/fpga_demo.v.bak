@@ -1,0 +1,632 @@
+// ****************************************************************************
+// COPYRIGHT (c) 2014, Xiamen Tianma Microelectronics Co, Ltd
+// All rights reserved.
+//
+// Author		:	xiaojing_zhan
+// Email			:	xiaojing_zhan@tianma.cn
+//
+// File name	:	fpga_demo.v
+// Version		:	V 1.0
+// Abstract		:	Top module
+// Called by	:	--
+//
+// ----------------------------------------------------------------------------
+// Revison 
+// 2014-07-03	:	Create file.
+// ****************************************************************************
+
+module fpga_demo(
+	input						osc_clk,
+	input						rst_n,	// PIN_D4 (FPGA_ARM_SDO)
+	
+	output	wire			spi_csx,	// PIN_K10 (FPGA_M3WR_CS)
+	output	wire			led,
+	input						te_detect,
+	
+	input						arm_scs,
+	input						arm_sck,
+	input						arm_sdi,
+	output	wire			arm_sdo,		//PIN_K11   (FPGA_M3WR_SDO)
+	
+	output	wire			mipi_if_sel,
+	output	wire			mipi_ps0,
+	output	wire			mipi_ps1,
+	output	wire			mipi_ps2,
+	output	wire			mipi_ps3,
+	output	wire			mipi_ps4,
+	
+	output	wire			rgb_pclk,
+	output	wire			rgb_hs,
+	output	wire			rgb_vs,
+	output	wire			rgb_en,
+	output 	wire[47:0]	rgb_data,	//when define CMD_MODE, please set port 'rgb_data' as inout
+	
+	input						arm_pic_wr,
+	input		[15:0]		arm_pic_wdata,
+
+	output	wire			srm_clk,
+	output	wire[1:0]	srm_cs_n, 
+	output	wire			srm_cke,
+	output	wire			srm_cas_n,
+	output	wire			srm_ras_n,
+	output	wire			srm_we_n,
+	output	wire			srm_ldqm,
+	output	wire			srm_udqm,
+	output	wire[1:0]	srm_ba,
+	output	wire[12:0]	srm_addr,
+	inout 	wire[15:0]	srm_data_a,
+	inout 	wire[15:0]	srm_data_b
+);
+
+// ----------------------------------------------------------------------------
+// Parameters definition
+// ----------------------------------------------------------------------------
+//`define CMD_MODE	//when define CMD_MODE, please set port 'rgb_data' as inout
+
+parameter project = "TL063FVMC02-01_G6"; //TL063FVMC02-01_G5
+parameter FPGA_version = "V1P8"; //common version or project version
+
+// ----------------------------------------------------------------------------
+// Variable definition
+// ----------------------------------------------------------------------------
+wire				clk_sys;
+wire				clk_intf;
+wire				rst_n_sys;
+wire				rst_n_intf;
+
+wire	[15:0]	hact;
+wire	[15:0]	vact;
+wire	[7:0]		vpw;
+wire	[15:0]	vbp;
+wire	[15:0]	vfp;
+wire	[7:0]		hpw;
+wire	[15:0]	hbp;
+wire	[15:0]	hfp;
+
+wire				pic_wr_en;
+wire	[4:0]		pic_wr_num;
+wire	[15:0]	pic_bst_num;
+wire	[4:0]		pic_size_rsv;
+wire	[9:0]		pic_last_bst_num;
+
+wire				dis_mode;
+wire	[7:0]		dis_num;
+wire				port_map;
+wire	[7:0]		port_main;
+wire				init_end;
+wire				te_detect_en;
+wire				pic_mask_en;
+wire	[11:0]	info_y_axis;
+
+wire	[7:0]		r_data;
+wire	[7:0]		g_data;
+wire	[7:0]		b_data;
+wire	[7:0]		graylvl;
+wire	[7:0]		dot_r1;
+wire	[7:0]		dot_g1;
+wire	[7:0]		dot_b1;
+wire	[7:0]		dot_r2;
+wire	[7:0]		dot_g2;
+wire	[7:0]		dot_b2;
+wire	[7:0]		dot_r3;
+wire	[7:0]		dot_g3;
+wire	[7:0]		dot_b3;
+wire	[7:0]		bg_r;
+wire	[7:0]		bg_g;
+wire	[7:0]		bg_b;
+wire	[7:0]		graylvl1;
+wire	[7:0]		graylvl2;
+wire	[7:0]		graylvl3;
+
+wire	[7:0]		otp_times;
+wire	[7:0]		otp_times1;
+wire	[7:0]		otp_times2;
+wire	[7:0]		info_show_en;
+wire	[7:0]		info0;
+wire	[7:0]		info1;
+wire	[7:0]		info2;
+wire	[7:0]		info3;
+wire	[7:0]		info4;
+wire	[7:0]		info5;
+wire	[7:0]		info6;
+wire	[7:0]		info7;
+wire	[7:0]		info8;
+wire	[7:0]		info9;
+wire	[7:0]		info10;
+wire	[7:0]		info11;
+wire	[7:0]		info12;
+wire	[7:0]		info13;
+
+wire	[7:0]		project0;
+wire	[7:0]		project1;
+wire	[7:0]		project2;
+wire	[7:0]		project3;
+wire	[7:0]		project4;
+wire	[7:0]		project5;
+wire	[7:0]		project6;
+wire	[7:0]		project7;
+wire	[7:0]		project8;
+wire	[7:0]		project9;
+wire	[7:0]		project10;
+wire	[7:0]		project11;
+wire	[7:0]		project12;
+wire	[7:0]		project13;
+wire	[7:0]		project14;
+wire	[7:0]		project15;
+wire	[7:0]		project16;
+wire	[7:0]		project17;
+wire	[7:0]		project18;
+wire	[7:0]		project19;
+wire	[7:0]		project20;
+wire	[7:0]		project21;
+
+wire	[7:0]		version0;
+wire	[7:0]		version1;
+wire	[7:0]		version2;
+wire	[7:0]		version3;
+wire	[7:0]		version4;
+wire	[7:0]		version5;
+wire	[7:0]		version6;
+wire	[7:0]		version7;
+wire	[7:0]		version8;
+wire	[7:0]		version9;
+wire	[7:0]		version10;
+wire	[7:0]		version11;
+wire	[7:0]		version12;
+
+wire	[23:0]	pic_data;
+wire				pic_rdy;
+wire				pic_fifo_rd;
+wire				pic_rd_clk;
+wire				srm_dir;
+wire	[15:0]	srm_dout_a;
+wire	[15:0]	srm_dout_b;
+
+wire	[7:0]		op_type;
+wire	 			ini_dcx;
+wire	[7:0]		ini_data;
+wire	 			next_step;
+wire	 			clc_next;
+wire	[7:0]		data_rd;
+wire	[7:0]		read_reg;
+wire				read_finish;
+
+// ----------------------------------------------------------------------------
+// Continuous assignment
+// ----------------------------------------------------------------------------
+// PS[1:0]
+// 00 = 3-wire 24-bit SPI interface
+// 01 = 3-wire 8-bit SPI interface
+// 10 = 4-wire 8-bit SPI interface
+// 11 = reserved
+// ----------------------------------------------------------------------------
+// PS[4:2]
+// 000 = 8-Bit MCU interface (MIPI DBI type B)
+// 001 = 16-bit MCU interface (MIPI DBI type B)
+// 100 = 24-bit MCU interface (MIPI DBI type B)
+// 010 = 8-Bit MCU interface (MIPI DBI type A, fixed E or clocked E mode)
+// 011 = 16-bit MCU interface (MIPI DBI type A, fixed E or clocked E mode)
+// 110 = 24-bit MCU interface (MIPI DBI type A, fixed E or clocked E mode)
+// 101 = reserved
+// 111 = reserved
+// ----------------------------------------------------------------------------
+`ifdef CMD_MODE
+
+assign mipi_if_sel = 1'b1; //MCU interface
+assign mipi_ps0 = 1'b1;
+assign mipi_ps1 = 1'b0; //3 wire 8 bit SPI interface
+assign mipi_ps2 = 1'b0;
+assign mipi_ps3 = 1'b0;
+assign mipi_ps4 = 1'b0; //8 bit MCU interface
+
+`else
+
+assign mipi_if_sel = 1'b0; //SPI+RGB interface
+assign mipi_ps0 = 1'b1;
+assign mipi_ps1 = 1'b0; //3 wire 8 bit SPI interface
+assign mipi_ps2 = 1'b0;
+assign mipi_ps3 = 1'b0;
+assign mipi_ps4 = 1'b0; //8 bit MCU interface
+
+assign rgb_pclk = clk_sys;
+
+`endif
+
+assign	led			=	init_end;
+
+assign	srm_ldqm		=	1'b0;
+assign	srm_udqm		=	1'b0;
+assign	srm_data_a	=	(srm_dir == 1'b1) ? srm_dout_a : 16'bz;
+assign	srm_data_b	=	(srm_dir == 1'b1) ? srm_dout_b : 16'bz;
+
+// ----------------------------------------------------------------------------
+// Module instantiation
+// ----------------------------------------------------------------------------
+clkrst u_clkrst (
+	.clk_in			(osc_clk),
+	.rst_n			(rst_n),
+	.clk_sys			(clk_sys),
+	.clk_intf		(clk_intf),
+	.clk_sdram		(srm_clk),
+	.rst_n_sys		(rst_n_sys),
+	.rst_n_intf		(rst_n_intf)
+);
+
+host_reg #(.project(project)) u_host_reg(
+	.clk				(clk_sys),
+	.rst_n			(rst_n_sys),
+
+	.arm_scs			(arm_scs),
+	.arm_sck			(arm_sck),
+	.arm_sdi			(arm_sdi),
+	.arm_sdo			(arm_sdo),
+
+	.hact				(hact),
+	.vact				(vact),
+	.vpw				(vpw),
+	.vbp				(vbp),
+	.vfp				(vfp),
+	.hpw				(hpw),
+	.hbp				(hbp),
+	.hfp				(hfp),
+
+	.pic_wr_en		(pic_wr_en),
+	.pic_wr_num		(pic_wr_num),
+	.pic_bst_num	(pic_bst_num),
+	.pic_size_rsv	(pic_size_rsv),
+	.pic_last_bst_num	(pic_last_bst_num),
+
+	.dis_mode		(dis_mode),
+	.dis_num			(dis_num),
+	.port_map		(port_map),
+	.port_main		(port_main),
+	.init_end		(init_end),
+	.te_detect_en	(te_detect_en),
+	.pic_mask_en	(pic_mask_en),
+	.info_y_axis   (info_y_axis),
+	
+	.r_data			(r_data),
+	.g_data			(g_data),
+	.b_data			(b_data),
+	.dot_r1			(dot_r1),
+	.dot_g1			(dot_g1),
+	.dot_b1			(dot_b1),
+	.dot_r2			(dot_r2),
+	.dot_g2			(dot_g2),
+	.dot_b2			(dot_b2),
+	.dot_r3			(dot_r3),
+	.dot_g3			(dot_g3),
+	.dot_b3			(dot_b3),
+	.bg_r				(bg_r),
+	.bg_g				(bg_g),
+	.bg_b				(bg_b),
+	.graylvl1		(graylvl1),
+	.graylvl2		(graylvl2),
+	.graylvl3		(graylvl3),
+	
+	.otp_times1		(otp_times1),
+	.otp_times2		(otp_times2),	
+	.info_show_en	(info_show_en),
+	.info0			(info0),
+	.info1			(info1),
+	.info2			(info2),
+	.info3			(info3),
+	.info4			(info4),
+	.info5			(info5),
+	.info6			(info6),
+	.info7			(info7),
+	.info8			(info8),
+	.info9			(info9),
+	.info10			(info10),
+	.info11			(info11),
+	.info12			(info12),
+	.info13			(info13),
+	
+	.project0		(project0),
+	.project1		(project1),
+	.project2		(project2),
+	.project3		(project3),
+	.project4		(project4),
+	.project5		(project5),
+	.project6		(project6),
+	.project7		(project7),
+	.project8		(project8),
+	.project9		(project9),
+	.project10		(project10),
+	.project11		(project11),
+	.project12		(project12),
+	.project13		(project13),
+	.project14		(project14),
+	.project15		(project15),
+	.project16		(project16),
+	.project17		(project17),
+	.project18		(project18),
+	.project19		(project19),
+	.project20		(project20),
+	.project21		(project21),
+
+	.version0		(version0),
+	.version1		(version1),
+	.version2		(version2),
+	.version3		(version3),
+	.version4		(version4),
+	.version5		(version5),
+	.version6		(version6),
+	.version7		(version7),
+	.version8		(version8),
+	.version9		(version9),
+	.version10		(version10),
+	.version11		(version11),
+	.version12		(version12),
+	
+	.op_type			(op_type),
+	.ini_dcx			(ini_dcx),
+	.ini_data		(ini_data),
+	.read_finish	(read_finish),
+	.next_step		(next_step),
+	.clc_next		(clc_next),	
+	.data_rd			(data_rd)
+);
+
+
+`ifdef CMD_MODE
+
+mcu_intf #(.FPGA_version(FPGA_version)) u_mcu_intf (
+	.clk				(clk_sys),
+	.rst_n			(rst_n_sys),
+
+	.hact				(hact),
+	.vact				(vact),
+
+	.dis_mode		(dis_mode),
+	.dis_num			(dis_num),
+	.port_map		(port_map),
+	.port_main		(port_main),
+	.init_end		(init_end),
+	.pic_mask_en	(pic_mask_en),
+	.info_y_axis   (info_y_axis),
+	
+	.r_data			(r_data),
+	.g_data			(g_data),
+	.b_data			(b_data),
+	.dot_r1			(dot_r1),
+	.dot_g1			(dot_g1),
+	.dot_b1			(dot_b1),
+	.dot_r2			(dot_r2),
+	.dot_g2			(dot_g2),
+	.dot_b2			(dot_b2),
+	.dot_r3			(dot_r3),
+	.dot_g3			(dot_g3),
+	.dot_b3			(dot_b3),
+	.bg_r				(bg_r),
+	.bg_g				(bg_g),
+	.bg_b				(bg_b),
+	.graylvl1		(graylvl1),
+	.graylvl2		(graylvl2),
+	.graylvl3		(graylvl3),
+	
+	.pic_rdy			(pic_rdy),
+	.pic_fifo_rd	(pic_fifo_rd),
+	.pic_data		({pic_data, pic_data}),
+	.pic_rd_clk		(pic_rd_clk),
+	
+	.mcu_csx			(spi_csx),
+	.mcu_rdx			(rgb_pclk),
+	.mcu_wrx			(rgb_vs),
+	.mcu_dcx			(rgb_en),
+	.mcu_data		(rgb_data),
+	
+	.otp_times1		(otp_times1),
+	.otp_times2		(otp_times2),
+	.info_show_en	(info_show_en),
+	.info0			(info0),
+	.info1			(info1),
+	.info2			(info2),
+	.info3			(info3),
+	.info4			(info4),
+	.info5			(info5),
+	.info6			(info6),
+	.info7			(info7),
+	.info8			(info8),
+	.info9			(info9),
+	.info10			(info10),
+	.info11			(info11),
+	.info12			(info12),
+	.info13			(info13),
+
+	.project0		(project0),
+	.project1		(project1),
+	.project2		(project2),
+	.project3		(project3),
+	.project4		(project4),
+	.project5		(project5),
+	.project6		(project6),
+	.project7		(project7),
+	.project8		(project8),
+	.project9		(project9),
+	.project10		(project10),
+	.project11		(project11),
+	.project12		(project12),
+	.project13		(project13),
+	.project14		(project14),
+	.project15		(project15),
+	.project16		(project16),
+	.project17		(project17),
+	.project18		(project18),
+	.project19		(project19),
+	.project20		(project20),
+	.project21		(project21),
+
+	.version0		(version0),
+	.version1		(version1),
+	.version2		(version2),
+	.version3		(version3),
+	.version4		(version4),
+	.version5		(version5),
+	.version6		(version6),
+	.version7		(version7),
+	.version8		(version8),
+	.version9		(version9),
+	.version10		(version10),
+	.version11		(version11),
+	.version12		(version12),
+	
+	.op_type			(op_type),
+	.ini_dcx			(ini_dcx),
+	.ini_data		(ini_data),
+	.read_finish	(read_finish),
+	.next_step		(next_step),
+	.clc_next		(clc_next),	
+	.data_rd			(data_rd)
+);
+
+`else
+
+rgb_intf #(.FPGA_version(FPGA_version)) u_rgb_intf (
+	.clk				(clk_sys),
+	.rst_n			(rst_n_sys),
+
+	.te_detect		(te_detect),
+	.te_detect_en	(te_detect_en),
+	
+	.hact				(hact),
+	.vact				(vact),
+	.vpw				(vpw),
+	.vbp				(vbp),
+	.vfp				(vfp),
+	.hpw				(hpw),
+	.hbp				(hbp),
+	.hfp				(hfp),
+
+	.dis_mode		(dis_mode),
+	.dis_num			(dis_num),
+	.port_map		(port_map),
+	.init_end		(init_end),
+	.pic_mask_en	(pic_mask_en),
+	.info_y_axis   (info_y_axis),
+	
+	.r_data			(r_data),
+	.g_data			(g_data),
+	.b_data			(b_data),
+	.dot_r1			(dot_r1),
+	.dot_g1			(dot_g1),
+	.dot_b1			(dot_b1),
+	.dot_r2			(dot_r2),
+	.dot_g2			(dot_g2),
+	.dot_b2			(dot_b2),
+	.dot_r3			(dot_r3),
+	.dot_g3			(dot_g3),
+	.dot_b3			(dot_b3),
+	.bg_r				(bg_r),
+	.bg_g				(bg_g),
+	.bg_b				(bg_b),	
+	.graylvl1		(graylvl1),
+	.graylvl2		(graylvl2),
+	.graylvl3		(graylvl3),
+	
+	.pic_rdy			(pic_rdy),
+	.pic_fifo_rd	(pic_fifo_rd),
+	.pic_data		({pic_data, pic_data}),
+	
+	.rgb_hs			(rgb_hs),
+	.rgb_vs			(rgb_vs),
+	.rgb_en			(rgb_en),
+	.rgb_data		(rgb_data),
+
+	.otp_times1		(otp_times1),
+	.otp_times2		(otp_times2),	
+	.info_show_en	(info_show_en),
+	.info0			(info0),
+	.info1			(info1),
+	.info2			(info2),
+	.info3			(info3),
+	.info4			(info4),
+	.info5			(info5),
+	.info6			(info6),
+	.info7			(info7),
+	.info8			(info8),
+	.info9			(info9),
+	.info10			(info10),
+	.info11			(info11),
+	.info12			(info12),
+	.info13			(info13),
+	
+	.project0		(project0),
+	.project1		(project1),
+	.project2		(project2),
+	.project3		(project3),
+	.project4		(project4),
+	.project5		(project5),
+	.project6		(project6),
+	.project7		(project7),
+	.project8		(project8),
+	.project9		(project9),
+	.project10		(project10),
+	.project11		(project11),
+	.project12		(project12),
+	.project13		(project13),
+	.project14		(project14),
+	.project15		(project15),
+	.project16		(project16),
+	.project17		(project17),
+	.project18		(project18),
+	.project19		(project19),
+	.project20		(project20),
+	.project21		(project21),
+	
+	.version0		(version0),
+	.version1		(version1),
+	.version2		(version2),
+	.version3		(version3),
+	.version4		(version4),
+	.version5		(version5),
+	.version6		(version6),
+	.version7		(version7),
+	.version8		(version8),
+	.version9		(version9),
+	.version10		(version10),
+	.version11		(version11),
+	.version12		(version12)
+);
+
+`endif
+
+
+pic_gen u_pic_gen (
+`ifdef CMD_MODE
+	.clk_sys			(pic_rd_clk),
+`else
+	.clk_sys			(clk_sys),
+`endif
+	.rst_n_sys		(rst_n_sys),
+	.clk_intf		(clk_intf),
+	.rst_n_intf		(rst_n_intf),
+	.pic_rdy			(pic_rdy),
+	.pic_num			(dis_num[4:0]),
+	.rd_req			(pic_fifo_rd),
+	.rd_data			(pic_data),
+	
+	.srm_cs_n		(srm_cs_n),
+	.srm_cke			(srm_cke),
+	.srm_cas_n		(srm_cas_n),
+	.srm_ras_n		(srm_ras_n),
+	.srm_we_n		(srm_we_n),
+	.srm_ba			(srm_ba),
+	.srm_addr		(srm_addr),
+	.srm_din_a		(srm_data_a),
+	.srm_din_b		(srm_data_b),
+	.srm_dout_a		(srm_dout_a),
+	.srm_dout_b		(srm_dout_b),
+	.srm_dir			(srm_dir),
+	.arm_pic_wr		(arm_pic_wr),
+	.arm_pic_wdata	(arm_pic_wdata),
+	.arm_pic_wen	(pic_wr_en),
+	
+	.pic_wr_num		(pic_wr_num),
+	.pic_bst_num	(pic_bst_num),
+	.pic_size_rsv	(pic_size_rsv),
+	.pic_last_bst_num (pic_last_bst_num),
+	.pic_mask_en	(pic_mask_en)
+);
+
+endmodule

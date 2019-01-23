@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Jan 07 11:51:23 2019
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : FPGA_DEMO
+Top-level Entity Name : fpga_demo
+Family : Cyclone IV E
+Device : EP4CE10F17I7
+Timing Models : Final
+Total logic elements : 8,286 / 10,320 ( 80 % )
+    Total combinational functions : 7,483 / 10,320 ( 73 % )
+    Dedicated logic registers : 3,370 / 10,320 ( 33 % )
+Total registers : 3370
+Total pins : 157 / 180 ( 87 % )
+Total virtual pins : 0
+Total memory bits : 93,696 / 423,936 ( 22 % )
+Embedded Multiplier 9-bit elements : 2 / 46 ( 4 % )
+Total PLLs : 1 / 2 ( 50 % )

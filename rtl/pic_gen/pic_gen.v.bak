@@ -1,0 +1,247 @@
+//*****************************************************************************
+// COPYRIGHT (c) 2013, Xiamen Tianma Microelectronics Co, Ltd
+//
+// File name     :  pic_gen.v
+// Module name   :  pic_gen
+//
+// Author        :  sijian_luo
+// Email         :  sijian_luo@tianma.cn
+// Version       :  v 1.0
+//
+// Function      :  Generate basic test picture &command code
+// Called by     :  --
+//
+// ----------------------------------------------------------------------------
+// Revison
+// 2013-12-3    :  creat file.
+//*****************************************************************************
+module pic_gen (
+    input                 clk_sys           ,
+    input                 rst_n_sys         ,
+    input                 clk_intf          ,
+    input                 rst_n_intf        ,
+    output reg            pic_rdy           ,
+    
+    //following 3 port in clk_sys domain
+    input       [4:0]     pic_num           ,  
+    input                 rd_req            ,
+    output      [23:0]    rd_data           ,
+    
+    output      [2:0]     srm_cs_n          ,
+    output                srm_cke           ,
+    output                srm_cas_n         ,
+    output                srm_ras_n         ,
+    output                srm_we_n          ,
+    output      [1:0]     srm_ba            ,
+    output      [12:0]    srm_addr          ,
+    input       [15:0]    srm_din_a         ,
+    input       [15:0]    srm_din_b         ,
+    input       [15:0]    srm_din_c         ,
+    output      [15:0]    srm_dout_a        ,
+    output      [15:0]    srm_dout_b        ,
+    output      [15:0]    srm_dout_c        ,
+    output                srm_dir           ,
+    input                 arm_pic_wr        ,
+    input       [15:0]    arm_pic_wdata     ,
+    input                 arm_pic_wen       ,
+	 
+    input       [4:0]     pic_wr_num        ,
+    input       [15:0]    pic_bst_num       ,
+    input       [4:0]     pic_size_rsv		  ,
+    input       [9:0]     pic_last_bst_num  ,
+	 input					  pic_mask_en
+);
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// parameters
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//variables declaration
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+reg                             dis_fifo_afull                  ;
+
+wire                            pic_fifo_afull                  ;
+wire                            pic_fifo_wr                     ;
+wire    [31:0]                  pic_fifo_wdata                  ;
+wire                            pic_fifo_aempty                 ;
+wire                            pic_fifo_rd                     ;
+wire    [31:0]                  pic_fifo_rdata                  ;
+
+wire                            srm_op_req                      ;
+wire                            srm_op                          ;
+wire                            srm_op_ack                      ;
+wire    [23:0]                  srm_op_addr                     ;
+wire                            srm_op_eof                      ;
+
+wire    [8:0]                   dis_fifo_dw                     ;
+wire                            dis_32_wr                       ;
+wire    [31:0]                  dis_32_wdat                     ;
+wire                            dis_96_wr                       ;
+wire    [95:0]                  dis_96_wdat                     ;
+wire                            dis_96_rd                       ;
+wire    [95:0]                  dis_96_rdat                     ;
+
+//reg                             pic_fifo_rd_d1                  ;
+
+reg     [4:0]                   syn_pic_num                     ;
+reg                             syn_arm_pic_wen                 ;
+reg     [4:0]                   syn_pic_wr_num                  ;
+reg     [15:0]                  syn_pic_bst_num                 ;
+reg     [4:0]                   syn_pic_size_rsv                ;
+reg     [9:0]                   syn_pic_last_bst_num            ;
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// continuous assignment
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// module instantiation
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+pic_get u_pic_get(
+    .clk                        ( clk_intf                      ),
+    .rst_n                      ( rst_n_intf                    ),
+    .arm_pic_wr                 ( arm_pic_wr                    ),
+    .arm_pic_wdata              ( arm_pic_wdata                 ),
+    .arm_pic_wen                ( syn_arm_pic_wen               ),
+    .pic_fifo_afull             ( pic_fifo_afull                ),
+    .pic_fifo_wr                ( pic_fifo_wr                   ),
+    .pic_fifo_wdata             ( pic_fifo_wdata                )
+);
+
+scfifow32_pic u_scfifow32_pic (
+    .clock                      ( clk_intf                      ),
+    .aclr                       ( ~rst_n_intf                   ),
+    .data                       ( pic_fifo_wdata                ),
+    .wrreq                      ( pic_fifo_wr                   ),
+    .rdreq                      ( pic_fifo_rd                   ),
+    .q                          ( pic_fifo_rdata                ),
+    .almost_full                ( pic_fifo_afull                ),
+    .almost_empty               ( pic_fifo_aempty               )
+);
+
+srm_ctrl u_srm_ctrl (
+    .clk                        ( clk_intf                      ),
+    .rst_n                      ( rst_n_intf                    ),
+    .pic_wr_num                 ( syn_pic_wr_num                ),
+    .pic_bst_num                ( syn_pic_bst_num               ),
+    .pic_size_rsv               ( syn_pic_size_rsv              ),
+    .pic_num                    ( syn_pic_num                   ),
+    .pic_fifo_aempty            ( pic_fifo_aempty               ),
+    .dis_fifo_afull             ( dis_fifo_afull                ),
+    .srm_op_req                 ( srm_op_req                    ),
+    .srm_op_ack                 ( srm_op_ack                    ),
+    .srm_op                     ( srm_op                        ),
+    .srm_op_addr                ( srm_op_addr                   ),
+    .srm_op_eof                 ( srm_op_eof                    )
+);
+
+srm_intf u_srm_intf (
+    .clk                        ( clk_intf                      ),
+    .rst_n                      ( rst_n_intf                    ),
+    .srm_op_req                 ( srm_op_req                    ),
+    .srm_op_ack                 ( srm_op_ack                    ),
+    .srm_op                     ( srm_op                        ),
+    .srm_op_eof                 ( srm_op_eof                    ),
+    .srm_op_addr                ( srm_op_addr                   ),
+    .srm_cs_n                   ( srm_cs_n                      ),
+    .srm_cke                    ( srm_cke                       ),
+    .srm_cas_n                  ( srm_cas_n                     ),
+    .srm_ras_n                  ( srm_ras_n                     ),
+    .srm_we_n                   ( srm_we_n                      ),
+    .srm_ba                     ( srm_ba                        ),
+    .srm_addr                   ( srm_addr                      ),
+    .srm_din_a                  ( srm_din_a                     ),
+    .srm_din_b                  ( srm_din_b                     ),
+    .srm_dout_a                 ( srm_dout_a                    ),
+    .srm_dout_b                 ( srm_dout_b                    ),
+    .srm_dir                    ( srm_dir                       ),
+    .pic_fifo_rd                ( pic_fifo_rd                   ),
+    .pic_fifo_rdata             ( pic_fifo_rdata                ),
+    .dis_fifo_wr                ( dis_32_wr                     ),
+    .dis_fifo_wdata             ( dis_32_wdat                   ),
+	 .pic_last_bst_num      	  ( syn_pic_last_bst_num          )
+);
+    
+wtr u_wtr (
+    .clk                        ( clk_intf                      ),
+    .rst_n                      ( rst_n_intf                    ),
+    .invld                      ( dis_32_wr                     ),
+    .indata                     ( dis_32_wdat                   ),
+    .outvld                     ( dis_96_wr                     ),
+    .outdata                    ( dis_96_wdat                   )
+);
+
+dcfifow96 u_dcfifow96(
+    .aclr                       ( ~rst_n_intf                   ),
+    .data                       ( dis_96_wdat                   ),
+    .rdclk                      ( clk_sys                       ),
+    .rdreq                      ( dis_96_rd                     ),
+    .wrclk                      ( clk_intf                      ),
+    .wrreq                      ( dis_96_wr                     ),
+    .q                          ( dis_96_rdat                   ),
+    .wrusedw                    ( dis_fifo_dw                   )
+);
+
+rtr u_rtr (
+    .clk                        ( clk_sys                       ),
+    .rst_n                      ( rst_n_sys                     ),
+    .rd                         ( rd_req                        ),
+    .data                       ( rd_data                       ),	// read picture data
+    .trrd                       ( dis_96_rd                     ),
+    .trdata                     ( dis_96_rdat                   )
+);
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// block statement
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+always @(posedge clk_intf or negedge rst_n_intf)
+begin
+    if (rst_n_intf == 1'b0)
+    begin
+        dis_fifo_afull <= 1'b0;
+    end
+    else
+    begin
+        if (dis_fifo_dw >= 9'd80)  //current depth of u_dcfifow96 is 256. When almost full, can at least hold 1 full page burst.
+        begin
+            dis_fifo_afull <= 1'b1;
+        end
+        else
+        begin
+            dis_fifo_afull <= 1'b0;
+        end
+    end
+end
+
+always @(posedge clk_intf or negedge rst_n_intf)
+begin
+    if (rst_n_intf == 1'b0)
+    begin
+        pic_rdy <= 1'b0;
+    end
+    else
+    begin
+        if (dis_fifo_dw >= 9'd80)
+        begin
+            pic_rdy <= 1'b1;
+        end
+        else
+        begin
+            pic_rdy <= pic_rdy;
+        end
+    end
+end
+
+//signal synchronization: from clk_sys domain to clk_intf domain
+always @(posedge clk_intf)
+begin
+    syn_pic_num <= (pic_mask_en == 1'b1) ? (pic_wr_num - 5'b1) : pic_num;
+    syn_arm_pic_wen <= arm_pic_wen;
+    syn_pic_wr_num  <= pic_wr_num;
+    syn_pic_bst_num <= pic_bst_num;
+    syn_pic_size_rsv <= pic_size_rsv;
+	 syn_pic_last_bst_num <= pic_last_bst_num;
+end
+
+endmodule
