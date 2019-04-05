@@ -3276,6 +3276,11 @@ begin
 	begin
 		bright_dot	<=	24'h000000;
 	end
+	else if (vcnt == 12'd0)
+	begin
+		//bright_dot	<=	{8'd255, 8'd255, 8'd255};
+		bright_dot	<=	{{8{pat_gval[6]}}, {8{pat_gval[5]}}, {8{pat_gval[4]}}};
+	end
 	else if (vcnt == (vsum >> 2'd2))//TOP
 	begin
 		if (hcnt == hsum >> 2'd2)
@@ -3333,9 +3338,27 @@ begin
 			bright_dot	<=	24'h000000;
 		end
 	end
+	else if(vcnt == vsum - 12'd1) 
+	begin
+		//bright_dot	<=	{8'd255, 8'd255, 8'd255};
+		bright_dot	<=	{{8{pat_gval[2]}}, {8{pat_gval[1]}}, {8{pat_gval[0]}}};
+	end
 	else
 	begin
-		bright_dot	<=	24'h000000;
+		if(hcnt == 12'd1)
+		begin
+			//bright_dot	<={8'd255, 8'd0, 8'd0};
+			bright_dot	<=	{{8{pat_bval[6]}}, {8{pat_bval[5]}}, {8{pat_bval[4]}}};
+		end
+		else if(hcnt == hsum - 12'd1)
+		begin
+			//bright_dot	<={8'd0, 8'd0, 8'd255};
+			bright_dot	<=	{{8{pat_bval[2]}}, {8{pat_bval[1]}}, {8{pat_bval[0]}}};
+		end
+		else
+		begin
+			bright_dot	<=	24'h000000;
+		end
 	end
 end
 
@@ -3532,7 +3555,7 @@ always @(posedge clk)
 begin	
 	if (pat_num == 8'd84)
 	begin
-		//											未					O		T		P
+		//											鏈				O		T		P
 		otp_character[0]	<=	{4'h0, 8'h01, 8'h00, 4'h0, 8'h00, 8'h00, 8'h00, 1'b0};
 		otp_character[1]	<=	{4'h0, 8'h01, 8'h00, 4'h0, 8'h00, 8'h00, 8'h00, 1'b0};
 		otp_character[2]	<=	{4'h0, 8'h01, 8'h00, 4'h0, 8'h00, 8'h00, 8'h00, 1'b0};
@@ -3574,7 +3597,7 @@ begin
 	end
 	else if (pat_num == 8'd116)
 	begin
-		//										崩							角
+		//										宕						瑙
 		otp_character[0]	<=	{4'h00, 8'h01, 8'h00, 4'h00, 8'h08, 8'h00, 8'h00, 1'b0};
 		otp_character[1]	<=	{4'h00, 8'h21, 8'h08, 4'h00, 8'h08, 8'h00, 8'h00, 1'b0};
 		otp_character[2]	<=	{4'h00, 8'h21, 8'h08, 4'h00, 8'h1F, 8'hE0, 8'h00, 1'b0};
@@ -3595,7 +3618,7 @@ begin
 	end
 	else if (pat_num == 8'd139)
 	begin
-		//										开							盖
+		//										寮€							鐩
 		otp_character[0]	<=	{4'h00, 8'h00, 8'h00, 4'h00, 8'h08, 8'h20, 8'h00, 1'b0};
 		otp_character[1]	<=	{4'h00, 8'h7F, 8'hFC, 4'h00, 8'h04, 8'h40, 8'h00, 1'b0};
 		otp_character[2]	<=	{4'h00, 8'h08, 8'h20, 4'h00, 8'h7F, 8'hFC, 8'h00, 1'b0};

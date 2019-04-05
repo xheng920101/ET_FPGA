@@ -316,7 +316,7 @@ host_reg #(.project(project)) u_host_reg(
 	.graylvl3		(graylvl3),
 	
 	.otp_times1		(otp_times1),
-	.otp_times2		(otp_times2),	
+	.otp_times2		(otp_times2),
 	.info_show_en	(info_show_en),
 	.info0			(info0),
 	.info1			(info1),
@@ -378,7 +378,6 @@ host_reg #(.project(project)) u_host_reg(
 	.clc_next		(clc_next),	
 	.data_rd			(data_rd)
 );
-
 
 `ifdef CMD_MODE
 

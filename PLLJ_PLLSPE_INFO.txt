@@ -1,5 +1,5 @@
 PLL_Name	clkrst:u_clkrst|pll:u_pll|altpll:altpll_component|pll_altpll:auto_generated|pll1
-PLLJITTER	32
+PLLJITTER	NA
 PLLSPEmax	84
 PLLSPEmin	-53
 
