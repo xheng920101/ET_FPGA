@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EPCS4) Path("D:/Progs/ET_FPGA/ET_FPGA/output_files/") File("FPGA_DEMO.pof") MfrSpec(OpMask(1) Child_OpMask(1 1));
+		Device PartName(EPCS4) Path("D:/Progs/ET_FPGA/ET_FPGA/output_files/") File("165M.pof") MfrSpec(OpMask(1) Child_OpMask(1 1));
 
 ChainEnd;
 

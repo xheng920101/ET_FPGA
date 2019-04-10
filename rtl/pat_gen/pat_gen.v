@@ -475,6 +475,18 @@ begin
 				v_sec3	<=	(vcnt >= 756) && (vcnt < 1514);	//area: 1/3 2270 ~ 2/3 2270
 				v_sec4	<=	(vcnt >= 567) && (vcnt < 1703);	//area: 1/4 2270 ~ 3/4 2270
 			end
+		12'd1440:
+			begin
+				v_sec2	<=	(vcnt >= 0) && (vcnt < 720);		//area: 0 ~ 1/2 1440
+				v_sec3	<=	(vcnt >= 480) && (vcnt < 960);	//area: 1/3 1440 ~ 2/3 1440
+				v_sec4	<=	(vcnt >= 360) && (vcnt < 1080);	//area: 1/4 1440 ~ 3/4 1440
+			end
+		12'd1680:
+			begin
+				v_sec2	<=	(vcnt >= 0) && (vcnt < 840);		//area: 0 ~ 1/2 1680
+				v_sec3	<=	(vcnt >= 560) && (vcnt < 1120);	//area: 1/3 1680 ~ 2/3 1680
+				v_sec4	<=	(vcnt >= 420) && (vcnt < 1260);	//area: 1/4 1680 ~ 3/4 1680
+			end
 		default:
 			begin
 				v_sec2	<=	1'b0;
@@ -652,11 +664,44 @@ begin
 						v_div256_cnt	<=	v_div256_cnt + 3'd1;
 					end
 				end
+			12'd1440:
+			// 1440 / 256 = 5.625
+			// 10 / 0.625 = 80
+			// 256 / 80 * 10 = 32
+			// 9 * 32 + 8 * 144 = 1440
+				begin
+					if (v_div256_gry < 8'd112)
+					begin
+						if (v_div256_cnt == 4'd7)
+						begin
+							v_div256_gry	<=	v_div256_gry + 8'd1;
+							v_div256_cnt	<=	4'd0;
+						end
+						else
+						begin
+							v_div256_gry	<=	v_div256_gry;
+							v_div256_cnt	<=	v_div256_cnt + 4'd1;
+						end
+					end
+					else
+						if (v_div256_cnt == 4'd8)
+						begin
+							v_div256_gry	<=	v_div256_gry + 8'd1;
+							v_div256_cnt	<=	{3'd0, v_div256_gry[0]};
+						end
+						else
+						begin
+							v_div256_gry	<=	v_div256_gry;
+							v_div256_cnt	<=	v_div256_cnt + 4'd1;
+						end
+					begin
+					end
+				end
 			12'd1560:
 			// 1560 / 256 = 6.09375
 			// 3 / 0.09375 = 32
 			// 256 / 32 * 3 = 24
-			// 9*24+8*168=1560
+			// 9 * 24 + 8 * 168 = 1560
 				begin
 					if (v_div256_gry < 8'd144)  
 					begin
@@ -689,11 +734,44 @@ begin
 			// 1600 / 256 = 6.25
 			// 1 / 0.25 = 4
 			// 256 / 4 * 1 = 64
-			// 9*64+8*128=1600
+			// 9 * 64 + 8 * 128 = 1600
 				begin
 					if (v_div256_gry < 8'd64)  
 					begin
 						if (v_div256_cnt == 4'd7)
+						begin
+							v_div256_gry	<=	v_div256_gry + 8'd1;
+							v_div256_cnt	<=	4'd0;
+						end
+						else
+						begin
+							v_div256_gry	<=	v_div256_gry;
+							v_div256_cnt	<=	v_div256_cnt + 4'd1;
+						end
+					end
+					else
+					begin
+						if (v_div256_cnt == 4'd8)
+						begin
+							v_div256_gry	<=	v_div256_gry + 8'd1;
+							v_div256_cnt	<=	{3'd0, v_div256_gry[0]};
+						end
+						else
+						begin
+							v_div256_gry	<=	v_div256_gry;
+							v_div256_cnt	<=	v_div256_cnt + 4'd1;
+						end
+					end
+				end
+			12'd1680:
+			// 1680 / 256 = 6.5625
+			// 9 / 0.5625 = 16
+			// 256 / 16 * 9 = 144
+			// 9 * 144 + 8 * 48 = 1680
+				begin
+					if (v_div256_gry < 8'd96)  
+					begin
+						if (v_div256_cnt == 4'd8)
 						begin
 							v_div256_gry	<=	v_div256_gry + 8'd1;
 							v_div256_cnt	<=	4'd0;
@@ -1611,6 +1689,10 @@ begin
 			begin
 				vsec_size <= 8'd63;
 			end
+		12'd1440:
+			begin
+				vsec_size <= 8'd72;
+			end
 		12'd1560:
 			begin
 				vsec_size <= 8'd78;
@@ -1618,6 +1700,10 @@ begin
 		12'd1600:
 			begin
 				vsec_size <= 8'd80;
+			end
+		12'd1680:
+			begin
+				vsec_size <= 8'd84;
 			end
 		12'd1920:
 			begin
