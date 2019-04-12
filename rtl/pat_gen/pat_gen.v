@@ -666,13 +666,13 @@ begin
 				end
 			12'd1440:
 			// 1440 / 256 = 5.625
-			// 10 / 0.625 = 80
-			// 256 / 80 * 10 = 32
-			// 9 * 32 + 8 * 144 = 1440
+			// 1 / 0.625 = 8
+			// 256 / 8 * 1 = 32
+			// 6 * 32 + 5 * 224 = 1440
 				begin
-					if (v_div256_gry < 8'd112)
+					if (v_div256_gry < 8'd192)
 					begin
-						if (v_div256_cnt == 4'd7)
+						if (v_div256_cnt == 4'd4)
 						begin
 							v_div256_gry	<=	v_div256_gry + 8'd1;
 							v_div256_cnt	<=	4'd0;
@@ -684,7 +684,7 @@ begin
 						end
 					end
 					else
-						if (v_div256_cnt == 4'd8)
+						if (v_div256_cnt == 4'd5)
 						begin
 							v_div256_gry	<=	v_div256_gry + 8'd1;
 							v_div256_cnt	<=	{3'd0, v_div256_gry[0]};
@@ -701,11 +701,11 @@ begin
 			// 1560 / 256 = 6.09375
 			// 3 / 0.09375 = 32
 			// 256 / 32 * 3 = 24
-			// 9 * 24 + 8 * 168 = 1560
+			// 7 * 24 + 6 * 232 = 1560
 				begin
-					if (v_div256_gry < 8'd144)  
+					if (v_div256_gry < 8'd208)  
 					begin
-						if (v_div256_cnt == 4'd7)
+						if (v_div256_cnt == 4'd5)
 						begin
 							v_div256_gry	<=	v_div256_gry + 8'd1;
 							v_div256_cnt	<=	4'd0;
@@ -718,7 +718,7 @@ begin
 					end
 					else
 					begin
-						if (v_div256_cnt == 4'd8)
+						if (v_div256_cnt == 4'd6)
 						begin
 							v_div256_gry	<=	v_div256_gry + 8'd1;
 							v_div256_cnt	<=	{3'd0, v_div256_gry[0]};
@@ -734,11 +734,11 @@ begin
 			// 1600 / 256 = 6.25
 			// 1 / 0.25 = 4
 			// 256 / 4 * 1 = 64
-			// 9 * 64 + 8 * 128 = 1600
+			// 7 * 64 + 6 * 192 = 1600
 				begin
-					if (v_div256_gry < 8'd64)  
+					if (v_div256_gry < 8'd128)  
 					begin
-						if (v_div256_cnt == 4'd7)
+						if (v_div256_cnt == 4'd5)
 						begin
 							v_div256_gry	<=	v_div256_gry + 8'd1;
 							v_div256_cnt	<=	4'd0;
@@ -751,7 +751,7 @@ begin
 					end
 					else
 					begin
-						if (v_div256_cnt == 4'd8)
+						if (v_div256_cnt == 4'd6)
 						begin
 							v_div256_gry	<=	v_div256_gry + 8'd1;
 							v_div256_cnt	<=	{3'd0, v_div256_gry[0]};
@@ -767,11 +767,11 @@ begin
 			// 1680 / 256 = 6.5625
 			// 9 / 0.5625 = 16
 			// 256 / 16 * 9 = 144
-			// 9 * 144 + 8 * 48 = 1680
+			// 7 * 144 + 6 * 112 = 1680
 				begin
-					if (v_div256_gry < 8'd96)  
+					if (v_div256_gry < 8'd32)  
 					begin
-						if (v_div256_cnt == 4'd8)
+						if (v_div256_cnt == 4'd6)
 						begin
 							v_div256_gry	<=	v_div256_gry + 8'd1;
 							v_div256_cnt	<=	4'd0;
@@ -784,7 +784,7 @@ begin
 					end
 					else
 					begin
-						if (v_div256_cnt == 4'd8)
+						if (v_div256_cnt == 4'd6)
 						begin
 							v_div256_gry	<=	v_div256_gry + 8'd1;
 							v_div256_cnt	<=	{3'd0, v_div256_gry[0]};
